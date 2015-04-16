@@ -1,0 +1,85 @@
+<html>
+  <head>
+<title></title>
+<style>
+* {
+  margin : 0;
+  padding : 0;
+}
+body {
+  width : 100%;
+  height : 100%;
+}
+#window {
+  width : 100%;
+  height : 100%;
+  position : relative;
+  background-color : #CCC;
+}
+#container {
+  position : absolute;
+  width : 100%;
+  background-color : #880;
+  z-index : 10;
+}
+#header {
+  position : fixed;
+  width : 100%;
+  height : 52px;
+  top : 0;
+  left : 0;
+  z-index : 15;
+  background-color : #CCC;
+}
+#dialogs {
+  position : fixed;
+  width : 100%;
+  height : 100%;
+  z-index : 20;
+}
+#dialogs-background {
+  position : absolute;
+  width : 100%;
+  height : 100%;
+  z-index : 30;
+  background-color : #444;
+  opacity : 0.3;
+}
+.dialog {
+  position : absolute;
+  width : 50%;
+  top : 25%;
+  left : 25%;
+  margin-left : auto;
+  margin-right : auto;
+  background-color : #FFF;
+  z-index : 40;
+}
+</style>
+</head>
+<body>
+  
+  <section id="window">
+    <section id="container">
+      <header id="header">
+        サンプルアプリ
+      </header>
+    </section>
+    <section id="dialogs">
+      <div id="dialogs-background"></div>
+      <section class="dialog">
+        <h1>Dialog title</h1>
+      </section>
+    </section>
+  </section>
+
+<script type="text/javascript">
+var container = document.querySelector('#container');
+for (var i = 0 ; i < 100 ; ++i) {
+  var h1 = document.createElement('h1');
+  h1.innerHTML = "Line " + i;
+  container.appendChild(h1);
+}
+</script>
+</body>
+</html>
